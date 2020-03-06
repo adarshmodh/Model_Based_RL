@@ -11,7 +11,7 @@ model_learn.py:
 * Network: 2 FC layer network with ReLU activation in between
 * Loss: MSE
 * Optimizer: Adam
-* training curve: ![picture alt](figure_1.png)
+* training curve: ![picture alt](Figure_1.png)
 * learned model is saved in pendulum_model.pt
 
 planner_astar.py:
