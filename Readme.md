@@ -1,3 +1,4 @@
+A method for implementing Model-based Learning on the [Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/) environment. 
 We assume that the dynamics of the pendulum system are unknown and the goal is to compute a sequence of actions that ensure the pendulum can stay in an upright position.
 We first the learn the model of the system by random exploration. Then using the learned model, use a planner to compute the sequence of states required to achieve the desired position.
 
