@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 
 dtype = torch.float
-device = torch.device("cpu")
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 # N is batch size; D_in is input dimension;
@@ -40,7 +40,7 @@ model = torch.nn.Sequential(
 ).to(device)
 
 
-model.load_state_dict(torch.load("pendulum_model.pt"))
+model.load_state_dict(torch.load("pendulum_model.pt", map_location=device))
 
 model.eval()
 

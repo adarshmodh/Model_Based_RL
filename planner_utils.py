@@ -8,14 +8,14 @@ tol = 1e-3
 
 dtype = torch.float
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 
 def angle_normalize(x):
     return (((x+np.pi) % (2*np.pi)) - np.pi)
 
 
 def load_model(model_path):
-
-	device = torch.device("cpu")
 
 	D_in, H, D_out = 5, 128, 3
 
@@ -25,7 +25,7 @@ def load_model(model_path):
 	    torch.nn.Linear(H, D_out, bias=True),
 	).to(device)
 
-	model.load_state_dict(torch.load(model_path))
+	model.load_state_dict(torch.load(model_path, map_location=device))
 
 	model.eval()
 

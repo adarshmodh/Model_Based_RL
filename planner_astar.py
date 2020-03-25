@@ -6,6 +6,7 @@ import planner_utils as utils
 import heapq
 import matplotlib.pyplot as plt
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 tol = 1e-3
 
